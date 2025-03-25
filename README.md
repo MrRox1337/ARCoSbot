@@ -26,13 +26,21 @@ sudo apt install ros-humble-joint-state-publisher ros-humble-robot-state-publish
 
 ```
 ```
-cd ~/your workscpace
+cd ~/your workspace
 colcon build
 ```
 ## 1.2 Clone this repo 
 Make sure you clone the repo in your robot and your remote PC 
 ```
+mkdir ~/your workspace/src && cd ~/your workspace/src
+```
+```
 git clone -b ros2-humble https://github.com/rigbetellabs/tortoisebot.git
+```
+```
+cd ~/your workspace/src/tortoisebot
+git clone -b ros2 https://github.com/Slamtec/rplidar_ros.git
+
 ```
 ```
 cd ~/your workscpace
