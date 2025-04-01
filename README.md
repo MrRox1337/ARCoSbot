@@ -35,7 +35,7 @@ Make sure you clone the repo in your robot and your remote PC
 mkdir ~/your workspace/src && cd ~/your workspace/src
 ```
 ```
-git clone -b ros2-humble https://github.com/rigbetellabs/tortoisebot.git
+git clone https://github.com/MrRox1337/ARCoSbot.git
 ```
 ```
 cd ~/your workspace/src/tortoisebot
