@@ -31,19 +31,117 @@ class GoToGoal(Node):
         self.create_waypoints()
 
     def create_waypoints(self):
-        """Create a sequence of waypoints."""
-        for x in range(0, 3):
+        """Create a sequence of waypoints to follow the specified path plan."""
+        self.waypoints = []  # Clear previous waypoints
+
+        # Start at origin
+        current_x, current_y = 0.0, 0.0
+
+        # Move straight for 7 m
+        for i in range(7):
             goal = PoseStamped()
             goal.header.stamp = self.get_clock().now().to_msg()
             goal.header.frame_id = "map"
-            goal.pose.position.x = 0.5 * x
-            goal.pose.position.y = 0.0
+            goal.pose.position.x = current_x + (1.0 * i)
+            goal.pose.position.y = current_y
             goal.pose.position.z = 0.0
             goal.pose.orientation.x = 0.0
             goal.pose.orientation.y = 0.0
             goal.pose.orientation.z = 0.0
             goal.pose.orientation.w = 1.0
             self.waypoints.append(goal)
+        current_x += 7.0  # Update position after moving straight
+
+        # Turn left and move straight for 1.5 m
+        for j in range(1, 3):
+            goal = PoseStamped()
+            goal.header.stamp = self.get_clock().now().to_msg()
+            goal.header.frame_id = "map"
+            goal.pose.position.x = current_x
+            goal.pose.position.y = current_y + (0.75 * j)
+            goal.pose.position.z = 0.0
+            goal.pose.orientation.x = 0.0
+            goal.pose.orientation.y = 0.0
+            goal.pose.orientation.z = 0.707  # 90° left turn
+            goal.pose.orientation.w = 0.707
+            self.waypoints.append(goal)
+        current_y += 1.5  # Update position after moving left
+
+        # Turn left and move straight for 7 m
+        for k in range(8):
+            goal = PoseStamped()
+            goal.header.stamp = self.get_clock().now().to_msg()
+            goal.header.frame_id = "map"
+            goal.pose.position.x = current_x - (1.0 * k)
+            goal.pose.position.y = current_y
+            goal.pose.position.z = 0.0
+            goal.pose.orientation.x = 0.0
+            goal.pose.orientation.y = 0.0
+            goal.pose.orientation.z = 1.0  # Facing backwards
+            goal.pose.orientation.w = 0.0
+            self.waypoints.append(goal)
+        current_x -= 7.0  # Update position after moving back
+
+        # Simulate a right turn (3 left turns)
+        for _ in range(3):
+            goal = PoseStamped()
+            goal.header.stamp = self.get_clock().now().to_msg()
+            goal.header.frame_id = "map"
+            goal.pose.position.x = current_x
+            goal.pose.position.y = current_y
+            goal.pose.position.z = 0.0
+            goal.pose.orientation.x = 0.0
+            goal.pose.orientation.y = 0.0
+            goal.pose.orientation.z = 0.707  # 90° left turn
+            goal.pose.orientation.w = 0.707
+            self.waypoints.append(goal)
+
+        # Move straight for 1.5 m after the right turn
+        for l in range(1, 3):
+            goal = PoseStamped()
+            goal.header.stamp = self.get_clock().now().to_msg()
+            goal.header.frame_id = "map"
+            goal.pose.position.x = current_x
+            goal.pose.position.y = current_y - (0.75 * l)
+            goal.pose.position.z = 0.0
+            goal.pose.orientation.x = 0.0
+            goal.pose.orientation.y = 0.0
+            goal.pose.orientation.z = 0.0
+            goal.pose.orientation.w = 1.0
+            self.waypoints.append(goal)
+        current_y -= 1.5  # Update position after moving down
+
+        # Move straight for 7 m after the right turn
+        for m in range(8):
+            goal = PoseStamped()
+            goal.header.stamp = self.get_clock().now().to_msg()
+            goal.header.frame_id = "map"
+            goal.pose.position.x = current_x + (1.0 * m)
+            goal.pose.position.y = current_y
+            goal.pose.position.z = 0.0
+            goal.pose.orientation.x = 0.0
+            goal.pose.orientation.y = 0.0
+            goal.pose.orientation.z = 0.0
+            goal.pose.orientation.w = 1.0
+            self.waypoints.append(goal)
+        current_x += 7.0  # Update position
+
+        # Final left turn
+        goal = PoseStamped()
+        goal.header.stamp = self.get_clock().now().to_msg()
+        goal.header.frame_id = "map"
+        goal.pose.position.x = current_x
+        goal.pose.position.y = current_y
+        goal.pose.position.z = 0.0
+        goal.pose.orientation.x = 0.0
+        goal.pose.orientation.y = 0.0
+        goal.pose.orientation.z = 0.707
+        goal.pose.orientation.w = 0.707
+        self.waypoints.append(goal)
+
+
+
+
 
     def send_goal(self):
         """Send the goal to the action server."""
