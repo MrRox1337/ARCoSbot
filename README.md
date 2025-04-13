@@ -191,7 +191,6 @@ ssh ubuntu@192.168.0.120
 ````
 ros2 launch tortoisebot_bringup bringup.launch.py use_sim_time:=False
 ````
-![TTB IRL](https://github.com/rigbetellabs/tortoisebot_docs/blob/ros2/imgs/tortoiseBot_demo/irl_robot_00.jpeg)
 
 Your tortoisebot is up and running. Now let's command the robot to move using our PC.
 
