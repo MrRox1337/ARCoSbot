@@ -192,7 +192,7 @@ ssh ubuntu@192.168.0.120
 ros2 launch tortoisebot_bringup bringup.launch.py use_sim_time:=False
 ````
 
-Your tortoisebot is up and running. Now let's command the robot to move using our PC.
+Your ARCoSBot is up and running. Now let's command the robot to move using our PC.
 
 #### 2. Open a new terminal on the PC and source ROS2 using the following command:
   ````
