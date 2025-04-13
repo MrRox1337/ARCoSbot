@@ -1,6 +1,10 @@
-#  Get your ARCoSBot Ready for action
+# ARCoSBot
+##  Full CAD of the robot and associated parts
+https://cad.onshape.com/documents/b0fdd7c7ade2b9d0e996e327/w/8812a5c2b417aa86f37da99e/e/94f006952575c4d38da15f87?renderMode=0&uiState=67fbdbb0351bef6c1a973a41
+
+##  Get your ARCoSBot Ready for action
 _(only if your SD card is booted with the Tortoisebot Image follow "Step 0" or skip to "Step 1")_
-# 0. Loading Custom Raspberry Pi Image For Tortoisebot on your SD Card
+## 0. Loading Custom Raspberry Pi Image For Tortoisebot on your SD Card
 ## https://github.com/rigbetellabs/tortoisebot/wiki/Custom-Image-Flash
 
 # 1. System Setup: Laptop / SBC Setup
