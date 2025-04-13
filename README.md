@@ -223,7 +223,6 @@ Enter the following command on the PC terminal:
 rviz2
 ````
 Click File -> Open Config -> "Home" -> (your workspace) -> "ARCoSBot" -> "tortoisebot_description" -> "rviz" -> "tortoisebot_sensor_display.rviz"
-![Robot IRL VIZ](https://github.com/rigbetellabs/tortoisebot_docs/blob/ros2/imgs/tortoiseBot_demo/irl_robot_viz.jpeg)
 
 ## Running the ARCoSBot in Exploration Mode
 
