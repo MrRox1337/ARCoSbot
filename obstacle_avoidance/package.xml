@@ -5,7 +5,7 @@
   <version>0.0.0</version>
   <description>TODO: Package description</description>
   <maintainer email="amanrox97@gmail.com">amanmishra</maintainer>
-  <license>TODO: License declaration</license>
+  <license>CC-BY-NC-ND</license>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
