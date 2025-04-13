@@ -3,9 +3,9 @@
 <package format="3">
   <name>tortoisebot_navigation</name>
   <version>0.0.0</version>
-  <description>TODO: Package description</description>
-  <maintainer email="kartiksoni010@gmail.com">kartik</maintainer>
-  <license>TODO: License declaration</license>
+  <description>This script defines a ROS2 node that sends a sequence of waypoints to the navigation stack and monitors feedback from the navigation stack. The waypoints are defined in a specific path plan. The script uses the FollowWaypoints action from the nav2_msgs package to send the waypoints and receive feedback.</description>
+  <maintainer email="amanrox97@gmail.com">amanmishra</maintainer>
+  <license>CC-BY-NC-ND</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
 

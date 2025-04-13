@@ -1,3 +1,10 @@
+# Author Aman Mishra
+# CST 3990 Capstone Project
+# Date: 2023-10-03
+# Description: This script defines a ROS2 node that sends a sequence of waypoints to the navigation stack
+# and monitors feedback from the navigation stack. The waypoints are defined in a specific path plan.
+# The script uses the FollowWaypoints action from the nav2_msgs package to send the waypoints and receive feedback.
+
 #!/usr/bin/env python3
 
 import rclpy
