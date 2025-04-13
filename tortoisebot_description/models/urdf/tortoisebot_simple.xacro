@@ -1,3 +1,9 @@
+<!-- Author: Aman Mishra
+MISIS: M00983641
+CST3990 UG Project -->
+<!-- Description: This file defines the URDF model for the TortoiseBot, including its physical structure,
+ links, joints, and associated properties for simulation in Gazebo. -->
+
 <?xml version="1.0" ?>
 <robot name="tortoisebot_simple" xmlns:xacro="http://www.ros.org/wiki/xacro">
 

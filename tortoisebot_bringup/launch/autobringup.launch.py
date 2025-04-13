@@ -1,3 +1,9 @@
+# Author: Aman Mishra
+# MISIS: M00983641
+# CST3990 UG Project
+# Description: This launch file is used to bring up the Tortoisebot in Gazebo simulation with RViz, mapping, and Navigation stack.
+# It can also be used to bring up the Tortoisebot in real world.
+
 import os
 import launch
 from ament_index_python.packages import get_package_share_directory

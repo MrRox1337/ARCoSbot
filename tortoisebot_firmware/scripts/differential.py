@@ -1,6 +1,6 @@
 # Author Aman Mishra
 # CST 3990 Capstone Project
-# Date: 2023-10-03
+# Date: 2023-10-13
 # Description: This script defines a ROS2 node that controls the differential drive of a robot using GPIO pins.
 # The node subscribes to the "cmd_vel" topic to receive velocity commands and publishes the PWM values and direction for each motor.
 # The script uses the RPi.GPIO library to control the GPIO pins and the math library to calculate wheel velocities.

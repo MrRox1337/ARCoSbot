@@ -1,3 +1,8 @@
+# Author: Aman Mishra
+# CST 3990 Capstone Project
+# Date: 2023-10-13
+# Description: A ROS 2 node for obstacle avoidance using laser scan data to detect obstacles and control robot movement.
+
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import LaserScan
@@ -21,10 +26,10 @@ class ObstacleAvoidance(Node):
         n = len(ranges)
         third = n // 3
         front_distance = min(ranges[third:2*third]) # Front section of the laser data
-        threshold_distance = 0.7  # Set a threshold distance to detect obstacles
+        threshold_distance = 0.7  # Set a threshold distance to detect obstacles to 70 cm
         twist = Twist()
         if front_distance < threshold_distance:
-            # Obstacle detected in front, turn
+            # Obstacle detected in front, turn left
             twist.angular.z = 1.4  # Turn rate
         else:
             # No obstacle, move forward
